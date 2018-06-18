@@ -80,7 +80,8 @@ class EventsController < ApplicationController
 
     flash[:notice] = result.notice if result.notice
     if result.render
-      render result.render
+      redirect_to result.event
+      # render result.render
     else
       redirect_to result.event
     end
